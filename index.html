@@ -8,6 +8,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+        <!-- Skill Icons CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tandpfun/skill-icons@latest/css/skill-icons.min.css" />
+        <style>
+            /* Ajuste visual para la grilla de skills (tema oscuro) */
+                .tech-grid {
+                    display: grid !important;
+                    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+                    gap: 22px !important;
+                    margin-top: 18px;
+                    margin-bottom: 8px;
+                }
+                .tech {
+                    background: var(--card);
+                    border-radius: 10px;
+                    padding: 16px 0 8px 0;
+                    box-shadow: 0 2px 10px rgba(2,6,23,0.6);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 90px;
+                    font-size: 1em;
+                    color: var(--text);
+                }
+                .tech i {
+                    margin-bottom: 6px;
+                }
+                .tech div {
+                    font-size: 0.98em;
+                    margin-top: 2px;
+                    color: var(--muted);
+                }
+        </style>
+    <!-- Skill Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tandpfun/skill-icons@latest/css/skill-icons.min.css" />
     <style>
         :root{
             --bg: #f5f7fb;
@@ -34,32 +69,44 @@
         .container{max-width:var(--container);margin:0 auto;padding:28px}
         header.site-header{display:flex;align-items:center;justify-content:space-between;gap:20px}
         .brand{display:flex;align-items:center;gap:14px}
-        .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;box-shadow:0 6px 20px rgba(91,107,246,0.18)}
+    .logo{width:52px;height:52px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;box-shadow:0 6px 18px rgba(16,24,40,0.06);overflow:hidden;background:transparent}
+    .logo img{width:100%;height:100%;object-fit:cover;display:block}
+    /* Badge oscuro para el logo (contraste sobre header oscuro) */
+    .logo-badge{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));padding:6px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    /* Variante: fondo oscuro sólido y sin sombra (para logos como n8n) */
+    .logo-badge.dark{background:#0f1726;border-radius:10px;padding:6px;box-shadow:none;border:1px solid rgba(255,255,255,0.04)}
         nav.primary{display:flex;gap:18px;align-items:center}
         nav.primary a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px}
         nav.primary a:hover, nav.primary a:focus{color:var(--accent-2);outline:none}
-        .hero{background:linear-gradient(135deg,rgba(91,107,246,0.12),rgba(123,75,179,0.06));padding:48px;border-radius:var(--radius);margin-top:18px;display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center;box-shadow:0 10px 30px rgba(16,24,40,0.06)}
+    .hero{background:linear-gradient(135deg,rgba(91,107,246,0.12),rgba(123,75,179,0.06));padding:48px;border-radius:var(--radius);margin-top:18px;display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center;box-shadow:0 10px 30px rgba(16,24,40,0.06)}
         .hero h1{font-size:2.4rem;margin:0 0 10px 0}
         .hero p.lead{color:var(--muted);margin-bottom:18px;font-size:1.05rem}
         .hero .ctas{display:flex;gap:12px}
-        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
-        .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 8px 24px rgba(91,107,246,0.18)}
-        .btn-ghost{background:transparent;border:2px solid rgba(15,23,42,0.06);color:var(--text)}
-        .card{background:var(--card);padding:20px;border-radius:12px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 8px 24px rgba(91,107,246,0.18)}
+    .btn-ghost{background:transparent;border:2px solid rgba(15,23,42,0.06);color:var(--text)}
+    .card{background:var(--card);padding:20px;border-radius:12px}
         .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
-        .service{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.04);border-top:4px solid rgba(91,107,246,0.12)}
+    .service{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.04);border-top:4px solid rgba(91,107,246,0.12)}
         .service h3{margin:0 0 8px 0;font-size:1.05rem}
         .service p{color:var(--muted);font-size:0.95rem}
-        .highlight{background:linear-gradient(90deg,var(--accent-2),var(--accent-3));color:#fff;padding:18px;border-radius:12px;margin-top:18px}
-        .tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:18px}
-        .tech{background:linear-gradient(180deg,rgba(124,58,237,0.03),transparent);padding:14px;border-radius:10px}
-        .contact{background:linear-gradient(90deg,#e6fffa,#fff0f6);padding:20px;border-radius:12px;text-align:center;margin-top:18px}
-        footer.site-footer{margin-top:28px;padding:18px;border-radius:12px;background:#0f172a;color:#fff;text-align:center}
-        a.email{color:inherit;text-decoration:underline}
+    .highlight{background:linear-gradient(90deg,var(--accent-2),var(--accent-3));color:#fff;padding:18px;border-radius:12px;margin-top:18px}
+    .tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:18px}
+    .tech{background:linear-gradient(180deg,rgba(124,58,237,0.03),transparent);padding:14px;border-radius:10px}
+    .contact{background:linear-gradient(90deg,#e6fffa,#fff0f6);padding:20px;border-radius:12px;text-align:center;margin-top:18px}
+    footer.site-footer{margin-top:28px;padding:18px;border-radius:12px;background:#0f172a;color:#fff;text-align:center}
+    a.email{color:inherit;text-decoration:underline}
         /* accessibility focus */
         a:focus,button:focus{outline:3px solid rgba(91,107,246,0.18);outline-offset:3px}
-        @media (max-width:920px){.hero{grid-template-columns:1fr;}.logo{width:44px;height:44px}}
+    @media (max-width:920px){.hero{grid-template-columns:1fr;}.logo{width:44px;height:44px}}
         @media (max-width:480px){.container{padding:16px}.hero h1{font-size:1.6rem}}
+    </style>
+    <style>
+    /* Clase utilitaria para igualar iconos en la sección de tecnologías */
+    .tech-icon{height:40px;width:auto;vertical-align:middle;display:inline-block;filter:drop-shadow(0 2px 6px rgba(2,6,23,0.6));}
+
+    /* Mejor contraste para imágenes en modo oscuro */
+    img {image-rendering: optimizeQuality;}
     </style>
 </head>
 <body>
@@ -69,7 +116,11 @@
     <div class="container">
         <header class="site-header" role="banner">
             <div class="brand">
-                <div class="logo" aria-hidden="true">QC</div>
+                <div class="logo">
+                    <div class="logo-badge">
+                        <img src="assets/n8n-logo.svg" alt="Quantum Code Studios" style="width:40px;height:40px;object-fit:contain;display:block">
+                    </div>
+                </div>
                 <div>
                     <div style="font-weight:800">Quantum Code Studios</div>
                     <div style="font-size:12px;color:var(--muted)">Desarrollo de Software</div>
@@ -138,16 +189,52 @@
             </section>
 
             <section id="tecnologias" class="card" aria-labelledby="tech-title">
-                <h2 id="tech-title">Tecnologías y Skills</h2>
-                <div class="tech-grid">
-                    <div class="tech"><strong>Desarrollo de software</strong> · Android · iOS · Web · PC</div>
-                    <div class="tech"><strong>Frameworks:</strong> Flutter · React · React Native · CakePHP · Vue.js · NestJS · QT</div>
-                    <div class="tech"><strong>Lenguajes:</strong> JavaScript · TypeScript · C++</div>
-                    <div class="tech"><strong>Backend:</strong> Node.js · CakePHP · NestJS</div>
-                    <div class="tech"><strong>Bases de Datos:</strong> SQL Server · MySQL · SQLite · MongoDB</div>
-                    <div class="tech"><strong>Bases de Datos:</strong> SQL Server · MySQL · SQLite · MongoDB · Postgres</div>
-                    <div class="tech"><strong>Inteligencia Artificial:</strong> Bots conversacionales · Integración de IA · RAG (Retrieval-Augmented Generation) para respuestas inteligentes</div>
-                </div>
+                                                                <h2 id="tech-title">Tecnologías y Skills</h2>
+                                                                <div style="margin: 24px 0;">
+                                                                    <div style="margin-bottom:10px;font-weight:700;font-size:1.08em">Lenguajes de Programación</div>
+                                                                    <div style="text-align:center;margin-bottom:8px">
+                                                                        <img src="https://skillicons.dev/icons?i=html,css,js,ts,cpp,java,dart" alt="Lenguajes" style="max-width:100%;height:auto;">
+                                                                    </div>
+                                                                    <div style="text-align:center;color:#6b7280;font-size:0.98em;margin-bottom:18px">
+                                                                        Dominio de los lenguajes esenciales para el desarrollo web, móvil y de escritorio: HTML y CSS para interfaces, JavaScript y TypeScript para lógica avanzada, y C++ para aplicaciones de alto rendimiento.
+                                                                    </div>
+
+                                                                    <div style="margin-bottom:10px;font-weight:700;font-size:1.08em">Frameworks y Librerías</div>
+                                                                    <div style="text-align:center;margin-bottom:8px">
+                                                                        <img src="https://skillicons.dev/icons?i=react,vue,flutter,androidstudio,apple,nodejs,nestjs,qt" alt="Frameworks" style="max-width:100%;height:auto;">
+                                                                    </div>
+                                                                    <div style="text-align:center;color:#6b7280;font-size:0.98em;margin-bottom:18px">
+                                                                        Experiencia en frameworks modernos para crear aplicaciones robustas y escalables: React, Vue y Flutter para interfaces; Node.js, NestJS y CakePHP para backend; QT para escritorio; Android/iOS para apps móviles.
+                                                                    </div>
+
+                                                                    <div style="margin-bottom:10px;font-weight:700;font-size:1.08em">Bases de Datos</div>
+                                                                    <div style="text-align:center;margin-bottom:8px">
+                                                                        <img src="https://skillicons.dev/icons?i=mysql,postgres,sqlite,mongodb" alt="Bases de Datos" style="max-width:100%;height:auto;">
+                                                                    </div>
+                                                                    <div style="text-align:center;color:#6b7280;font-size:0.98em;margin-bottom:18px">
+                                                                        Diseño, integración y optimización de bases de datos SQL y NoSQL: MySQL, PostgreSQL, SQLite, MongoDB y SQL Server, adaptando la solución a cada proyecto.
+                                                                    </div>
+
+                                                                    <div style="margin-bottom:10px;font-weight:700;font-size:1.08em">DevOps</div>
+                                                                    <div style="text-align:center;margin-bottom:8px">
+                                                                        <img src="https://skillicons.dev/icons?i=docker,aws,azure,firebase" alt="DevOps" style="max-width:100%;height:auto;">
+                                                                    </div>
+                                                                    <div style="text-align:center;color:#6b7280;font-size:0.98em;margin-bottom:18px">
+                                                                        Despliegue, orquestación y servicios cloud con Docker, AWS, Azure y Firebase.
+                                                                    </div>
+
+                                                                    <div style="margin-bottom:10px;font-weight:700;font-size:1.08em">Inteligencia Artificial y Automatización</div>
+                                                                                                                                        <div style="text-align:center;margin-bottom:8px;display:flex;justify-content:center;align-items:center;gap:18px">
+                                                                        <img src="https://skillicons.dev/icons?i=ai" alt="Inteligencia Artificial" class="tech-icon" style="max-width:100%;height:auto;">
+                                                                                                                                                                                                                                                                                                                <!-- Usar el logo local oficial de n8n para coherencia con la cabecera -->                                                                                                                                                                                                                             <span class="logo-badge dark" style="padding:6px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;">
+                                                                                                                                                                                                                                                                                                                    <img src="assets/n8n-logo.svg" alt="n8n" class="tech-icon" style="width:36px;height:36px;display:block;">
+                                                                                                                                                                                                                                                                                                                </span>
+                                                                    </div>
+                                                                   
+                                                                    <div style="text-align:center;color:#6b7280;font-size:0.98em;">
+                                                                        Desarrollo de herramientas complejas con backend y cliente, integrando inteligencia artificial tanto en flujos automatizados (n8n) como en soluciones a medida sin depender de plataformas externas. Implementación de IA generativa, bots conversacionales y automatización avanzada para potenciar productos y servicios inteligentes.
+                                                                    </div>
+                                                                </div>
             </section>
 
             <section id="terminos" class="card" aria-labelledby="terms-title">
