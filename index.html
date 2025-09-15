@@ -3,362 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DarDev - Desarrollo de Software</title>
+    <meta name="description" content="DarDev - Desarrollo de software profesional: apps móviles, web, desktop y bases de datos. Soluciones a medida." />
+    <title>DarDev — Desarrollo de Software Profesional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root{
+            --bg: #f5f7fb;
+            --card: #ffffff;
+            --muted: #6b7280;
+            --accent: #5b6bf6;
+            --accent-2: #7b4bb3;
+            --accent-3: #ff6b6b;
+            --text: #0f172a;
+            --radius: 14px;
+            --container: 1100px;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f4f7fa;
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            margin:0;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            background:var(--bg);
+            color:var(--text);
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.5;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            margin-bottom: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        .header .subtitle {
-            font-size: 1.3em;
-            opacity: 0.95;
-            margin-bottom: 15px;
-        }
-        .header .tagline {
-            font-size: 1.1em;
-            opacity: 0.85;
-        }
-        .section {
-            background: white;
-            margin-bottom: 30px;
-            padding: 35px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            border-top: 4px solid #667eea;
-        }
-        .section h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 2em;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
-        }
-        .contact-info {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        .contact-info h2 {
-            border: none;
-            margin-bottom: 25px;
-        }
-        .tech-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-        .tech-category {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-left: 5px solid #764ba2;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .tech-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        .tech-category h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.4em;
-        }
-        .tech-list {
-            color: #555;
-            font-weight: 500;
-            line-height: 1.8;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-        .service-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            border-top: 5px solid #667eea;
-            transition: transform 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-        }
-        .service-card h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-        .service-card .platforms {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        .highlight-box {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 25px 0;
-        }
-        .highlight-box h3 {
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-        .benefits-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-        .benefit-item {
-            padding: 15px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-            border-left: 4px solid white;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 30px;
-            background: #2c3e50;
-            color: white;
-            border-radius: 15px;
-        }
-        @media (max-width: 768px) {
-            .container { padding: 10px; }
-            .header h1 { font-size: 2.2em; }
-            .tech-showcase { grid-template-columns: 1fr; }
-            .services-grid { grid-template-columns: 1fr; }
-        }
+        .container{max-width:var(--container);margin:0 auto;padding:28px}
+        header.site-header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+        .brand{display:flex;align-items:center;gap:14px}
+        .logo{width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;box-shadow:0 6px 20px rgba(91,107,246,0.18)}
+        nav.primary{display:flex;gap:18px;align-items:center}
+        nav.primary a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px}
+        nav.primary a:hover, nav.primary a:focus{color:var(--accent-2);outline:none}
+        .hero{background:linear-gradient(135deg,rgba(91,107,246,0.12),rgba(123,75,179,0.06));padding:48px;border-radius:var(--radius);margin-top:18px;display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center;box-shadow:0 10px 30px rgba(16,24,40,0.06)}
+        .hero h1{font-size:2.4rem;margin:0 0 10px 0}
+        .hero p.lead{color:var(--muted);margin-bottom:18px;font-size:1.05rem}
+        .hero .ctas{display:flex;gap:12px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+        .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 8px 24px rgba(91,107,246,0.18)}
+        .btn-ghost{background:transparent;border:2px solid rgba(15,23,42,0.06);color:var(--text)}
+        .card{background:var(--card);padding:20px;border-radius:12px}
+        .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+        .service{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.04);border-top:4px solid rgba(91,107,246,0.12)}
+        .service h3{margin:0 0 8px 0;font-size:1.05rem}
+        .service p{color:var(--muted);font-size:0.95rem}
+        .highlight{background:linear-gradient(90deg,var(--accent-2),var(--accent-3));color:#fff;padding:18px;border-radius:12px;margin-top:18px}
+        .tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:18px}
+        .tech{background:linear-gradient(180deg,rgba(124,58,237,0.03),transparent);padding:14px;border-radius:10px}
+        .contact{background:linear-gradient(90deg,#e6fffa,#fff0f6);padding:20px;border-radius:12px;text-align:center;margin-top:18px}
+        footer.site-footer{margin-top:28px;padding:18px;border-radius:12px;background:#0f172a;color:#fff;text-align:center}
+        a.email{color:inherit;text-decoration:underline}
+        /* accessibility focus */
+        a:focus,button:focus{outline:3px solid rgba(91,107,246,0.18);outline-offset:3px}
+        @media (max-width:920px){.hero{grid-template-columns:1fr;}.logo{width:44px;height:44px}}
+        @media (max-width:480px){.container{padding:16px}.hero h1{font-size:1.6rem}}
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>DarDev</h1>
-            <p class="subtitle">Desarrollo de Software Profesional</p>
-            <p class="tagline">Android • iOS • Web • PC • Flutter • React • Node.js • Bases de Datos</p>
-        </div>
-
-        <div class="section">
-            <h2>🚀 Desarrollo de Software Multiplataforma</h2>
-            <p>Especialistas en crear soluciones tecnológicas completas utilizando las tecnologías más actuales del mercado. Desde aplicaciones móviles hasta sistemas web complejos y software de escritorio.</p>
-            
-            <div class="highlight-box">
-                <h3>¿Por qué elegir DarDev?</h3>
-                <div class="benefits-list">
-                    <div class="benefit-item">✨ Experiencia en múltiples plataformas</div>
-                    <div class="benefit-item">⚡ Tecnologías de vanguardia</div>
-                    <div class="benefit-item">🎯 Soluciones personalizadas</div>
-                    <div class="benefit-item">🔧 Soporte técnico completo</div>
+</head>
+<body>
+    <div class="container">
+        <header class="site-header" role="banner">
+            <div class="brand">
+                <div class="logo" aria-hidden="true">DD</div>
+                <div>
+                    <div style="font-weight:800">DarDev</div>
+                    <div style="font-size:12px;color:var(--muted)">Desarrollo de Software</div>
                 </div>
             </div>
-        </div>
+            <nav class="primary" role="navigation" aria-label="Menú principal">
+                <a href="#servicios">Servicios</a>
+                <a href="#tecnologias">Tecnologías</a>
+                <a href="#terminos">Términos</a>
+                <a href="#contacto" class="btn btn-ghost">Contacto</a>
+                <a href="/privacy.html" style="margin-left:8px; font-weight:600; color:var(--muted);">Privacidad</a>
+            </nav>
+        </header>
 
-        <div class="section">
-            <h2>💻 Servicios de Desarrollo</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>📱 Aplicaciones Móviles</h3>
-                    <div class="platforms">Android • iOS</div>
-                    <p>Desarrollo de aplicaciones móviles nativas y multiplataforma usando <strong>Flutter</strong> y <strong>React Native</strong>. Desde apps simples hasta soluciones empresariales complejas.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>🌐 Desarrollo Web</h3>
-                    <div class="platforms">Frontend • Backend • Full Stack</div>
-                    <p>Sitios web modernos y aplicaciones web usando <strong>React</strong>, <strong>Vue.js</strong>, <strong>Node.js</strong> y <strong>CakePHP</strong>. Interfaces atractivas y funcionales.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>🖥️ Software de Escritorio</h3>
-                    <div class="platforms">Windows • macOS • Linux</div>
-                    <p>Aplicaciones de escritorio multiplataforma con <strong>QT</strong> y <strong>C++</strong>. Software robusto y eficiente para cualquier sistema operativo.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>🗄️ Bases de Datos</h3>
-                    <div class="platforms">SQL Server • MySQL • SQLite • MongoDB</div>
-                    <p>Diseño, implementación y optimización de bases de datos. Migración entre sistemas y consultas eficientes.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>⚙️ Tecnologías Especializadas</h2>
-            <div class="tech-showcase">
-                <div class="tech-category">
-                    <h3>📱 Desarrollo Móvil</h3>
-                    <div class="tech-list">
-                        <strong>Flutter</strong> - Desarrollo multiplataforma<br>
-                        <strong>React Native</strong> - Apps nativas<br>
-                        <strong>Android Studio</strong> - Desarrollo Android<br>
-                        <strong>iOS Development</strong> - Apps para iPhone/iPad
+        <main role="main" aria-label="Contenido principal">
+            <section class="hero" aria-labelledby="hero-title">
+                <div>
+                    <h1 id="hero-title">Desarrollo de software profesional, a medida.</h1>
+                    <p class="lead">Creamos aplicaciones móviles, web y de escritorio con foco en rendimiento, seguridad y experiencia de usuario. Entregas rápidas y comunicación clara durante todo el proyecto.</p>
+                    <div class="ctas">
+                        <a class="btn btn-primary" href="mailto:dariorama60@gmail.com" aria-label="Contactar por correo">Contactar</a>
+                        <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
                     </div>
+                    <div style="margin-top:14px;color:var(--muted);font-size:0.95rem">Disponible: Lunes a Sábado · Santa Fe, Argentina · <a class="email" href="mailto:dariorama60@gmail.com">dariorama60@gmail.com</a></div>
                 </div>
-                
-                <div class="tech-category">
-                    <h3>🌐 Tecnologías Web</h3>
-                    <div class="tech-list">
-                        <strong>React</strong> - Frontend moderno<br>
-                        <strong>Vue.js</strong> - Interfaces interactivas<br>
-                        <strong>Node.js</strong> - Backend JavaScript<br>
-                        <strong>CakePHP</strong> - Framework PHP robusto
+
+                <aside class="card" aria-label="Resumen rápido de servicios">
+                    <h3 style="margin-top:0">Servicios destacados</h3>
+                    <div class="services">
+                        <div class="service">
+                            <h3>Aplicaciones Móviles</h3>
+                            <p>Flutter, React Native — Android & iOS con experiencia en UX nativa.</p>
+                        </div>
+                        <div class="service">
+                            <h3>Desarrollo Web</h3>
+                            <p>React, Vue, Node.js — SPAs, APIs y soluciones full-stack.</p>
+                        </div>
+                        <div class="service">
+                            <h3>Software de Escritorio</h3>
+                            <p>QT, C++ — Rendimiento nativo y despliegue cross-platform.</p>
+                        </div>
+                        <div class="service">
+                            <h3>Bases de Datos</h3>
+                            <p>SQL Server, MySQL, SQLite, MongoDB — Diseño y optimización.</p>
+                        </div>
                     </div>
+                </aside>
+            </section>
+
+            <section id="servicios" class="card" aria-labelledby="servicios-title" style="margin-top:18px">
+                <h2 id="servicios-title">¿Qué hacemos?</h2>
+                <p style="color:var(--muted)">Ofrecemos soluciones desde la idea hasta la puesta en producción: análisis, diseño, desarrollo, pruebas y soporte post-lanzamiento.</p>
+                <div class="highlight" role="note">
+                    <strong>Por qué elegir DarDev:</strong>
+                    <ul style="margin:10px 0 0 18px;color:rgba(255,255,255,0.95)">
+                        <li>Experiencia en múltiples plataformas</li>
+                        <li>Tecnologías modernas y buenas prácticas</li>
+                        <li>Comunicación transparente y entregas claras</li>
+                        <li>Soporte y mantenimiento post-entrega</li>
+                    </ul>
                 </div>
-                
-                <div class="tech-category">
-                    <h3>💻 Desarrollo de Escritorio</h3>
-                    <div class="tech-list">
-                        <strong>QT Framework</strong> - Apps multiplataforma<br>
-                        <strong>C++</strong> - Desarrollo de alto rendimiento<br>
-                        <strong>Cross-platform</strong> - Windows, Mac, Linux<br>
-                        <strong>Native Performance</strong> - Máximo rendimiento
-                    </div>
+            </section>
+
+            <section id="tecnologias" class="card" aria-labelledby="tech-title">
+                <h2 id="tech-title">Tecnologías</h2>
+                <div class="tech-grid">
+                    <div class="tech"><strong>Flutter</strong> · React Native · Android Studio · iOS</div>
+                    <div class="tech"><strong>React</strong> · Vue.js · Node.js · APIs REST</div>
+                    <div class="tech"><strong>QT</strong> · C++ · Desktop cross-platform</div>
+                    <div class="tech"><strong>SQL Server</strong> · MySQL · SQLite · MongoDB</div>
+                    <div class="tech"><strong>DevOps</strong> · Cloud deploy · CI/CD</div>
+                    <div class="tech"><strong>Testing</strong> · TDD · Code Review · Seguridad</div>
                 </div>
-                
-                <div class="tech-category">
-                    <h3>🗄️ Gestión de Datos</h3>
-                    <div class="tech-list">
-                        <strong>SQL Server</strong> - Base de datos empresarial<br>
-                        <strong>MySQL</strong> - Sistema de gestión popular<br>
-                        <strong>SQLite</strong> - Base de datos ligera<br>
-                        <strong>MongoDB</strong> - Base de datos NoSQL
-                    </div>
-                </div>
-                
-                <div class="tech-category">
-                    <h3>🔧 Herramientas Adicionales</h3>
-                    <div class="tech-list">
-                        <strong>JavaScript</strong> - Lenguaje versátil<br>
-                        <strong>Git</strong> - Control de versiones<br>
-                        <strong>APIs REST</strong> - Integración de servicios<br>
-                        <strong>Testing</strong> - Aseguramiento de calidad
-                    </div>
-                </div>
-                
-                <div class="tech-category">
-                    <h3>🚀 Integración y Deploy</h3>
-                    <div class="tech-list">
-                        <strong>API Integration</strong> - Conexión con servicios<br>
-                        <strong>Cloud Deploy</strong> - Despliegue en la nube<br>
-                        <strong>Performance Optimization</strong> - Optimización<br>
-                        <strong>Security</strong> - Implementación segura
-                    </div>
-                </div>
-            </div>
-        </div>
+            </section>
 
-        <div class="contact-info">
-            <h2>📧 Contacto Profesional</h2>
-            <p style="font-size: 1.2em; margin-bottom: 15px;"><strong>Email:</strong> dariorama60@gmail.com</p>
-            <p style="margin-bottom: 10px;"><strong>Ubicación:</strong> Santa Fe, Argentina</p>
-            <p style="margin-bottom: 20px;"><strong>Disponibilidad:</strong> Lunes a Sábado, 9:00 - 20:00 hs (GMT-3)</p>
-            <p style="font-style: italic; color: #555;">Para consultas sobre proyectos, escríbenos por email y coordinaremos la comunicación según tus preferencias.</p>
-        </div>
+            <section id="terminos" class="card" aria-labelledby="terms-title">
+                <h2 id="terms-title">Términos y política de privacidad</h2>
+                <p style="color:var(--muted)">A continuación se describe cómo recopilamos, usamos y protegemos la información personal en proyectos y comunicaciones. Esta política está diseñada para cumplir con requisitos genéricos de plataformas como Facebook Developer; si necesitas una versión legalmente revisada para un país/cliente específico, házmelo saber.</p>
 
-        <div class="section">
-            <h2>📋 Términos de Servicio</h2>
-            
-            <h3>1. Servicios Ofrecidos</h3>
-            <p>DarDev proporciona servicios profesionales de desarrollo de software incluyendo aplicaciones móviles (Android/iOS con Flutter y React Native), desarrollo web (React, Vue.js, Node.js, CakePHP), software de escritorio (QT, C++), y manejo de bases de datos (SQL Server, MySQL, SQLite, MongoDB).</p>
+                <h3>1. Responsable y datos de contacto</h3>
+                <p>Responsable del tratamiento: DarDev<br>
+                Correo de contacto para privacidad: <strong>privacidad@dardev.com.ar</strong><br>
+                Ubicación: Santa Fe, Argentina</p>
 
-            <h3>2. Condiciones del Proyecto</h3>
-            <ul style="margin: 15px 0; padding-left: 20px;">
-                <li>Los proyectos se desarrollan según especificaciones técnicas acordadas</li>
-                <li>Se proporciona estimación de tiempo y costo antes de iniciar</li>
-                <li>Los cambios en el alcance pueden afectar plazos y costos</li>
-                <li>Se mantiene comunicación regular sobre el progreso</li>
-            </ul>
+                <h3>2. Datos que recopilamos</h3>
+                <p>Podemos recopilar y procesar las siguientes categorías de datos personales:</p>
+                <ul style="color:var(--muted)">
+                    <li><strong>Datos de contacto:</strong> nombre, correo electrónico, teléfono (cuando los proporciones para comunicación del proyecto).</li>
+                    <li><strong>Datos del proyecto:</strong> especificaciones, requisitos funcionales, documentos, archivos y cualquier dato técnico necesario para desarrollar el software.</li>
+                    <li><strong>Datos de facturación (si aplica):</strong> datos fiscales o de pago cuando se acuerde un servicio de pago (almacenados o procesados solo cuando sea necesario).</li>
+                    <li><strong>Información técnica de uso:</strong> registros de errores, logs y metadatos técnicos que ayudan en depuración y soporte (sin incluir credenciales privadas del cliente).</li>
+                </ul>
 
-            <h3>3. Entregables y Soporte</h3>
-            <ul style="margin: 15px 0; padding-left: 20px;">
-                <li>Código fuente completo y documentación técnica</li>
-                <li>30 días de soporte gratuito post-entrega</li>
-                <li>Corrección de bugs durante el período de garantía</li>
-                <li>Capacitación básica en el uso del software desarrollado</li>
-            </ul>
-        </div>
+                <h3>3. Finalidades y base legal</h3>
+                <p>Usamos los datos personales para las siguientes finalidades:</p>
+                <ul style="color:var(--muted)">
+                    <li>Evaluar y cotizar proyectos (base: ejecución de precontrato/consentimiento).</li>
+                    <li>Desarrollar, probar, desplegar y mantener el software (base: ejecución de contrato).</li>
+                    <li>Comunicación comercial y operativa relacionada al servicio (base: interés legítimo o consentimiento según el contexto).</li>
+                    <li>Cumplir obligaciones legales y de facturación (base: cumplimiento legal).</li>
+                </ul>
 
-        <div class="section">
-            <h2>🔒 Política de Privacidad</h2>
-            
-            <h3>Información que Manejamos</h3>
-            <p>Como desarrollador de software, únicamente recopilamos y manejamos:</p>
-            <ul style="margin: 15px 0; padding-left: 20px;">
-                <li><strong>Datos de contacto:</strong> Email, nombre para comunicación del proyecto</li>
-                <li><strong>Especificaciones técnicas:</strong> Requisitos y funcionalidades del software</li>
-                <li><strong>Información del proyecto:</strong> Detalles necesarios para el desarrollo</li>
-            </ul>
+                <h3>4. Compartición con terceros y proveedores</h3>
+                <p>Podemos compartir datos con proveedores y subcontratistas que participan en la entrega de los servicios (por ejemplo, servicios de hosting, almacenamiento, herramientas CI/CD, plataformas de mensajería). Antes de compartir datos con un tercero, nos aseguramos de que exista un contrato que obligue al proveedor a mantener la confidencialidad y aplicar medidas de seguridad adecuadas.</p>
 
-            <h3>Uso de la Información</h3>
-            <ul style="margin: 15px 0; padding-left: 20px;">
-                <li>Desarrollar el software según especificaciones acordadas</li>
-                <li>Mantener comunicación sobre el progreso del proyecto</li>
-                <li>Proporcionar soporte técnico y actualizaciones</li>
-                <li>Gestionar aspectos administrativos del proyecto</li>
-            </ul>
+                <h4>Ejemplos de terceros:</h4>
+                <ul style="color:var(--muted)">
+                    <li>Plataformas de hosting (AWS, Azure, DigitalOcean, etc.)</li>
+                    <li>Herramientas de control de versiones y CI (GitHub, GitLab, Bitbucket)</li>
+                    <li>Servicios de correo o notificaciones (SMTP, SendGrid, etc.)</li>
+                    <li>Servicios de análisis y monitorización (cuando el proyecto lo requiera y el cliente lo autorice)</li>
+                </ul>
 
-            <h3>Protección y Confidencialidad</h3>
-            <ul style="margin: 15px 0; padding-left: 20px;">
-                <li>Absoluta confidencialidad de la información del proyecto</li>
-                <li>No compartimos datos con terceros bajo ninguna circunstancia</li>
-                <li>Uso de conexiones seguras para toda comunicación</li>
-                <li>Cumplimiento con leyes argentinas de protección de datos</li>
-            </ul>
+                <h3>5. Cookies y tecnologías de rastreo</h3>
+                <p>El sitio estático de presentación puede usar cookies técnicas mínimas (por ejemplo, para mantener preferencias de idioma o sesión). No usamos cookies de seguimiento avanzado por defecto. Si integras herramientas de terceros que requieren cookies (por ejemplo Google Analytics o Facebook Pixel), se te pedirá consentimiento y se listarán explícitamente.</p>
 
-            <h3>Tus Derechos</h3>
-            <p>Tienes derecho a solicitar acceso, corrección o eliminación de tu información contactando a: <strong>privacidad@dardev.com.ar</strong></p>
-        </div>
+                <h3>6. Seguridad</h3>
+                <p>Implementamos medidas técnicas y organizativas razonables para proteger los datos personales, tales como cifrado en tránsito (HTTPS), control de acceso, copias de seguridad regulares y procedimientos de gestión de incidentes. No obstante, ningún método de transmisión por Internet o de almacenamiento electrónico es 100% seguro.</p>
 
-        <div class="section">
-            <h2>✅ Cumplimiento y Certificaciones</h2>
-            <ul style="margin: 15px 0; padding-left: 20px;">
-                <li><strong>Cumplimiento GDPR</strong> para proyectos internacionales</li>
-                <li><strong>Ley de Protección de Datos Personales</strong> (Argentina - Ley 25.326)</li>
-                <li><strong>Mejores prácticas</strong> de desarrollo seguro</li>
-                <li><strong>Código ético</strong> en el desarrollo de software</li>
-            </ul>
-        </div>
+                <h3>7. Retención de datos</h3>
+                <p>Los datos relacionados con presupuestos y comunicación se conservan mientras exista relación comercial y por un período adicional razonable (por ejemplo, hasta 5 años) para cumplimiento legal y contable, salvo que la normativa local exija otro plazo. Los datos de soporte y logs se conservan según la necesidad operativa y la política acordada con el cliente.</p>
 
-        <div class="footer">
-            <p><strong>© 2025 DarDev - Desarrollo de Software Profesional</strong></p>
-            <p>Especialistas en Android • iOS • Web • PC • Flutter • React • Node.js • Bases de Datos</p>
-            <p style="margin-top: 15px; font-size: 0.9em;">Última actualización: Septiembre 2025</p>
-        </div>
+                <h3>8. Derechos del usuario</h3>
+                <p>Tienes derecho a:</p>
+                <ul style="color:var(--muted)">
+                    <li>Solicitar acceso a tus datos personales.</li>
+                    <li>Solicitar la rectificación de datos inexactos.</li>
+                    <li>Solicitar la supresión de tus datos cuando proceda (derecho al olvido).</li>
+                    <li>Solicitar la portabilidad de datos en formato estructurado, cuando aplique.</li>
+                    <li>Oponerte al tratamiento o solicitar la limitación del mismo en ciertos supuestos.</li>
+                </ul>
+                <p>Para ejercer tus derechos, contacta a: <strong>privacidad@dardev.com.ar</strong>. Atenderemos tu solicitud en los plazos que establezca la normativa aplicable.</p>
+
+                <h3>9. Transferencias internacionales</h3>
+                <p>En algunos casos, los datos pueden ser transferidos o alojados en países distintos al de origen (por ejemplo, proveedores cloud). Cuando se realicen transferencias internacionales, nos aseguramos de que existan garantías adecuadas (cláusulas contractuales, proveedores con certificaciones, etc.).</p>
+
+                <h3>9.1 Consideraciones específicas para integraciones con plataformas (por ejemplo Facebook)</h3>
+                <p>Si integras funcionalidades relacionadas con Facebook (por ejemplo Facebook Login, Facebook SDK, o Facebook Pixel), ten en cuenta lo siguiente:</p>
+                <ul style="color:var(--muted)">
+                    <li>Los datos de autenticación o perfil que el usuario autorice a compartir mediante Facebook (p. ej. nombre, correo) serán solicitados explícitamente al usuario por la propia plataforma de Facebook.</li>
+                    <li>Podemos recibir tokens o identificadores proporcionados por Facebook que se usan para autenticar o identificar sesiones; esos tokens se almacenan y procesan según lo necesario para la integración y seguridad.</li>
+                    <li>Si tu aplicación requiere la eliminación de los datos asociados a un usuario desde Facebook, implementamos (o podemos implementar) un Data Deletion Callback conforme a la documentación de Facebook. Si necesitas que lo configuremos, proporciona la URL del endpoint que Facebook debe llamar para confirmar la eliminación.</li>
+                </ul>
+
+                <p><strong>Data Deletion Callback (ejemplo):</strong> Si tu app usa Facebook Login y requieres la integración de eliminación automática, la URL de callback para eliminación de datos puede ser (ejemplo): <code>https://tudominio.com/facebook/data-deletion-callback</code>. Esta URL debe aceptar solicitudes POST desde Facebook y devolver un JSON con la confirmación de la eliminación según la guía de Facebook.</p>
+
+
+                <h3>10. Cambios en la política</h3>
+                <p>Podemos actualizar esta política de privacidad periódicamente. Cuando haya cambios materiales, lo notificaremos a través del sitio o por correo electrónico a los contactos registrados.</p>
+
+                <h3>11. Contacto y autoridad de control</h3>
+                <p>Contacto: <strong>privacidad@dardev.com.ar</strong><br>
+                Si consideras que tus derechos no han sido atendidos, puedes presentar una denuncia ante la autoridad de protección de datos correspondiente en tu país.</p>
+
+                <p style="margin-top:12px;color:var(--muted)"><strong>Versión:</strong> 1.0 — <strong>Fecha:</strong> Septiembre 2025</p>
+            </section>
+
+            <section id="contacto" class="contact" aria-labelledby="contacto-title">
+                <h2 id="contacto-title">Contacto</h2>
+                <p style="margin:6px 0;color:var(--muted)">Escríbenos para evaluar tu proyecto y recibir una propuesta inicial.</p>
+                <p style="margin:8px 0"><a class="btn btn-primary" href="mailto:dariorama60@gmail.com">Enviar correo</a></p>
+                <p style="margin-top:10px;color:var(--muted)"><strong>Ubicación:</strong> Santa Fe, Argentina · <strong>Horario:</strong> Lunes a Sábado, 9:00–20:00 (GMT-3)</p>
+            </section>
+        </main>
+
+    <footer class="site-footer" role="contentinfo">
+            <div style="font-weight:700">© 2025 DarDev</div>
+            <div style="margin-top:6px;color:rgba(255,255,255,0.85)">Especialistas en Android · iOS · Web · Desktop · Bases de Datos</div>
+            <div style="margin-top:8px;font-size:12px;opacity:0.9">Última actualización: Septiembre 2025</div>
+            <div style="margin-top:10px;font-size:0.95em"><a href="/privacy.html" style="color:rgba(255,255,255,0.95);text-decoration:underline">Política de Privacidad</a> · Contacto: <a href="mailto:dariorama60@gmail.com" style="color:rgba(255,255,255,0.95);text-decoration:underline">dariorama60@gmail.com</a></div>
+        </footer>
     </div>
+
+    
 </body>
 </html>
